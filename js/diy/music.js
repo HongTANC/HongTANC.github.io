@@ -3,7 +3,6 @@ const ap = new APlayer({
     fixed: true,
 	autoplay: false, //自动播放 
     audio: [
-
     {
         name:'懐古',
         artist:'藤間仁',
