@@ -1,0 +1,218 @@
+/* Custom polish for HongTANC's Fluid blog.
+ * Keep this file in source/css so it survives theme updates.
+ */
+
+:root {
+  --htc-accent: #b86b83;
+  --htc-accent-2: #6f86d6;
+  --htc-card-radius: 18px;
+  --htc-soft-shadow: 0 14px 36px rgba(87, 56, 68, 0.16);
+  --htc-soft-shadow-dark: 0 14px 36px rgba(0, 0, 0, 0.38);
+}
+
+/* Header / banner */
+#banner .mask {
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(255, 216, 231, 0.24), transparent 28%),
+    linear-gradient(135deg, rgba(20, 18, 28, 0.55), rgba(87, 56, 68, 0.18), rgba(7, 9, 18, 0.48));
+}
+
+.banner-text .h2,
+.banner-text h1,
+.banner-text .subtitle {
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.38);
+}
+
+#navbar {
+  box-shadow: 0 6px 24px rgba(37, 21, 30, 0.18);
+}
+
+.navbar-brand strong::before {
+  content: "✦ ";
+  color: #ffd8e7;
+}
+
+/* Cards / boards */
+#board,
+.index-card,
+.card,
+.list-group-item,
+.sidebar-card {
+  border-radius: var(--htc-card-radius) !important;
+}
+
+.index-card {
+  overflow: hidden;
+  box-shadow: var(--htc-soft-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.index-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(87, 56, 68, 0.22);
+}
+
+.index-card img {
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.index-card:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.08);
+}
+
+.post-metas,
+.post-meta {
+  color: var(--sec-text-color);
+}
+
+/* Reading experience */
+.markdown-body {
+  line-height: 1.95;
+  letter-spacing: 0.025em;
+}
+
+.markdown-body p {
+  text-indent: 2em;
+}
+
+.markdown-body li p,
+.markdown-body blockquote p,
+.markdown-body .no-indent,
+.markdown-body .site-card p,
+.markdown-body .timeline p {
+  text-indent: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  letter-spacing: 0.03em;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(184, 107, 131, 0.22);
+}
+
+.markdown-body h2::before {
+  content: "✦";
+  margin-right: 0.45rem;
+  color: var(--htc-accent);
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid var(--htc-accent);
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(90deg, rgba(184, 107, 131, 0.10), rgba(111, 134, 214, 0.05));
+}
+
+.markdown-body img {
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.markdown-body code {
+  border-radius: 6px;
+}
+
+.markdown-body table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Legacy article snippets inside older posts */
+.markdown-body .article {
+  font-size: 1.05rem;
+}
+
+.markdown-body .myImage {
+  width: auto;
+  height: auto;
+}
+
+.markdown-body t1 {
+  display: inline-block;
+  margin: 0.45rem 0 0.15rem;
+  font-weight: 700;
+  color: var(--htc-accent);
+}
+
+/* Custom pages */
+.site-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.site-card {
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(184, 107, 131, 0.18);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 245, 250, 0.34));
+  box-shadow: 0 8px 22px rgba(87, 56, 68, 0.08);
+}
+
+.site-card h3 {
+  margin-top: 0;
+}
+
+.timeline {
+  margin: 1rem 0 1.5rem;
+  padding-left: 1.2rem;
+  border-left: 3px solid rgba(184, 107, 131, 0.32);
+}
+
+.timeline-item {
+  position: relative;
+  margin: 0 0 1rem;
+  padding-left: 0.9rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.63rem;
+  top: 0.5rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--htc-accent);
+  box-shadow: 0 0 0 5px rgba(184, 107, 131, 0.14);
+}
+
+.footer-motto::before {
+  content: " · ";
+  opacity: 0.65;
+}
+
+/* APlayer should float above the glass board without dominating the page. */
+.aplayer.aplayer-fixed {
+  border-radius: 0 16px 0 0;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+}
+
+[data-user-color-scheme="dark"] .index-card,
+[data-user-color-scheme="dark"] .site-card {
+  box-shadow: var(--htc-soft-shadow-dark);
+}
+
+[data-user-color-scheme="dark"] .site-card {
+  border-color: rgba(255, 255, 255, 0.10);
+  background: linear-gradient(135deg, rgba(37, 45, 56, 0.72), rgba(52, 30, 39, 0.32));
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    line-height: 1.85;
+  }
+
+  .markdown-body p {
+    text-indent: 0;
+  }
+
+  .index-card:hover {
+    transform: none;
+  }
+}
